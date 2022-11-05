@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles/login.css">
+    <title>Login / The Sportster Space</title>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar_menu center-flex">
+            <div class="logo center-flex">
+                <a href="">login</a>
+            </div>
+
+            <ul class="navbar_options center-flex">
+                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <div class="center">
+
+        <div class="image-container login-img">
+
+        </div>
+
+        <form class="login_form column" id="loginForm" novalidate>
+
+            <h1 class="form-title">Login</h1>
+
+            <div class="input-container">
+            <p>Ingrese su e-mail</p>
+            <input type="text" placeholder="E-mail" id="loginEmail">
+            <small></small>
+            </div>
+
+            <div class="input-container">
+            <p>ingrese su contraseña</p>
+            <input type="password" placeholder="Contraseña" id="loginPassword">
+            <small></small>
+            </div>
+
+            <div class="button-container">
+            <button type="submit" class="submit-button">Enviar</button>
+            </div>
+
+            <p>¿no tienes una cuenta? <a href="/register.html">Registrate</a></p>
+        </form>
+
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/validacion.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+</html>

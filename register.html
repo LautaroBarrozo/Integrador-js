@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles/register.css">
+    <title>register / The Sportster Space</title>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar_menu center-flex">
+            <div class="logo center-flex">
+                <a href="">Logo</a>
+            </div>
+
+            <ul class="navbar_options center-flex">
+                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <div class="center">
+
+        <div class="image-container login-img">
+
+        </div>
+
+        <form class="login_form column" id="form" novalidate>
+
+            <h1 class="form-title">Register</h1>
+
+            <div class="input-container">
+                <p>Ingrese su nombre de usuario</p>
+                <input type="text" placeholder="Nombre de usuario" id="userName">
+                <small></small>
+            </div>
+
+
+            <div class="input-container">
+                <p>Ingrese su e-mail</p>
+                <input type="text" placeholder="E-mail" id="userEmail">
+                <small></small>
+            </div>
+
+            <div class="input-container">
+                <p>ingrese su contraseña</p>
+                <input type="password" placeholder="Contraseña" id="userPassword">
+                <small></small>
+            </div>
+
+            <div class="input-container">
+                <p>Confirme su contraseña</p>
+                <input type="password" placeholder="Contraseña" id="userConfirmPassword">
+                <small></small>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="submit-button" id="submitRegisterButton">Enviar</button>
+            </div>
+
+            <div class="input-container">
+            <p>Creando una cuenta aceptaras nuestros</p>
+            <p><a href="">terminos y condiciones</a></p>
+            </div>
+
+            <p>¿Ya tienes una cuenta? <a href="/index.html">Inicia sesion</a></p>
+
+        </form>
+
+    </div>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/validacion.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
