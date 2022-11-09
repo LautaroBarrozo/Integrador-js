@@ -1,3 +1,9 @@
+
+
+const saveActiveUser = (element) => {
+    localStorage.setItem('activeUser', JSON.stringify(element))
+}
+
 const isEmpty = (userInfo) => userInfo == "";
 
 const isNameValid = (userInfo) => {
@@ -36,7 +42,7 @@ const isLoginInfoValid = (userInfoEmail, userInfoPassword) => {
         let clave = localStorage.key(i)
         let user = JSON.parse(localStorage.getItem(clave));
 
-        user.forEach(e => {
+        users.forEach(e => {
             if (e.email == userInfoEmail && e.password == userInfoPassword) {
                 isValid = true
                 saveActiveUser(e)

@@ -18,7 +18,11 @@
                 <a href="">Logo</a>
             </div>
 
-            <ul class="navbar_options center-flex">
+            <div class="menu-navbar-icon" id="navbar-bars">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="navbar_options open-navbar-menu center-flex" id="navbar-bars-menu">
                 <li><a href="">Inicio</a></li>
                 <li><a href="">Productos</a></li>
                 <li><a href="">Sponsors</a></li>
@@ -26,24 +30,25 @@
                 <li><i class="fa-sharp fa-solid fa-cart-shopping"></i></li>
                 <li><i class="fa-solid fa-user" id="user-icon"></i></li>
             </ul>
+            
 
+            <div class="user-menu" id="user-info-menu">
+                <!-- <div class="center-flex column">
+                    <div class="user-menu-icon center-flex">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+        
+                    <h2 class="user-name">nombre de usuario</h2>
+                    <h4 class="user-name">E-mail del usuario</h4>
+        
+                    <button class="logout-button" id="logOut-button">cerrar sesion</button>
+                </div> -->
+            </div>
         </nav>
     </header>
 
     <!-- menus -->
 
-    <div class="user-menu" id="user-info-menu">
-        <!-- <div class="center-flex column">
-            <div class="user-menu-icon center-flex">
-                <i class="fa-solid fa-user"></i>
-            </div>
-
-            <h2 class="user-name">nombre de usuario</h2>
-            <h4 class="user-name">E-mail del usuario</h4>
-
-            <button class="logout-button">cerrar sesion</button>
-        </div> -->
-    </div>
 
     <!-- hero -->
 
@@ -69,6 +74,51 @@
             <div class="sponsor sponsor_img5"></div>
         </div>
 
+    </section>
+
+    <!-- filtros -->
+
+    <section class="categories-container">
+
+        <h5>Categorias de productos</h5>
+
+        <div class="categories center-flex">
+            <button class="category active">
+                <img src="/imgs/categories/motorbike.png" alt="populares" />
+                <h4>Populares</h4>
+                <span class="divider-categories"></span>
+            </button>
+            <button class="category" data-category="camperas">
+                <img src="/imgs/categories/leather-jacket.png" alt="Camperas" />
+                <h4>Camperas</h4>
+                <span class="divider-categories"></span>
+            </button>
+            <button class="category" data-category="pantalones">
+                <img src="/imgs/categories/jeans.png" alt="pantalones" />
+                <h4>pantalones</h4>
+                <span class="divider-categories"></span>
+            </button>
+            <button class="category" data-category="calzado">
+                <img src="/imgs/categories/boots.png" alt="calzado" />
+                <h4>Calzado</h4>
+                <span class="divider-categories"></span>
+            </button>
+            <button class="category" data-category="cascos">
+                <img src="/imgs/categories/helmet.png" alt="cascos" />
+                <h4>Cascos</h4>
+                <span class="divider-categories"></span>
+            </button>
+            <button class="category" data-category="protecciones">
+                <img src="/imgs/categories/pads.png" alt="protecciones" />
+                <h4>Protecciones</h4>
+                <span class="divider-categories"></span>
+            </button>
+            <button class="category" data-category="guantes">
+                <img src="/imgs/categories/gloves.png" alt="guantes" />
+                <h4>Guantes</h4>
+                <span class="divider-categories"></span>
+            </button>
+        </div>
     </section>
 
     <script src="/js/utils.js"></script>

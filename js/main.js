@@ -6,14 +6,8 @@ const registerButton = document.getElementById("submitRegisterButton")
 
 let users = JSON.parse(localStorage.getItem('users')) || []
 
-let activeUser = JSON.parse(localStorage.getItem('activeUser')) || []
-
 const saveLocalStorage = () => {
     localStorage.setItem('users', JSON.stringify(users))
-}
-
-const saveActiveUser = (element) => {
-    localStorage.setItem('activeUser', JSON.stringify(element))
 }
 
 const saveData = () => {
