@@ -6,6 +6,8 @@ const userConfirmPassword = document.getElementById("userConfirmPassword")
 const loginUserEmail = document.getElementById("loginEmail")
 const loginUserPassword = document.getElementById("loginPassword")
 
+const commentInput = document.getElementById("comment-input")
+
 const checknameInput = (input) => {
     let isValid = false;
 
@@ -29,7 +31,7 @@ const checkEmailInput = (input) => {
     const inputContent = input.value.trim()
 
     if (isEmpty(inputContent)) {
-        showError(userEmail, "Error el E-mail es obligatorio")
+        showError(userEmail, "ERROR el E-mail es obligatorio")
     } else if (!isEmailValid(inputContent)) {
         showError(userEmail, "ERROR el E-mail no es valido")
     } else {
@@ -46,9 +48,9 @@ const checkPasswordInput = (input) => {
     const inputContent = input.value.trim()
 
     if (isEmpty(inputContent)) {
-        showError(userPassword, "Error la contraseña es obligatoria")
+        showError(userPassword, "ERROR la contraseña es obligatoria")
     } else if (!isPasswordValid(inputContent)) {
-        showError(userPassword, "Error la contraseña no es valida")
+        showError(userPassword, "ERROR la contraseña no es valida")
     } else {
         clearError(userPassword)
         isValid = true
@@ -64,9 +66,9 @@ const checkConfirmPassword = (inputPassword, inputConfirm) => {
     const inputConfirmContent = inputConfirm.value.trim()
 
     if (isEmpty(inputConfirmContent)) {
-        showError(userConfirmPassword, "Error confirmar contraseña es obligatorio")
+        showError(userConfirmPassword, "ERROR confirmar contraseña es obligatorio")
     } else if (!isConfirmValid(inputPasswordContent, inputConfirmContent)) {
-        showError(userConfirmPassword, "Error las contraseñas deben ser iguales")
+        showError(userConfirmPassword, "ERROR las contraseñas deben ser iguales")
     } else {
         clearError(userConfirmPassword)
         isValid = true
@@ -111,6 +113,23 @@ const checkLoginPassword = (loginEmailInput, loginPasswordInput) => {
     return isValid
 }
 
+const checkComment = (comment) => {
+
+    let isValid = false
+
+    const commentInputContent = comment.value.trim()
+
+    if (isEmpty(commentInputContent)) {
+        showError(commentInput, "ERROR deve escribir un comentario")
+    } else if (!isCommentInputValid(commentInputContent)) {
+        showError(commentInput, "ERROR el comentario no es valido")
+    } else {
+        clearError(commentInput)
+        isValid = true
+    }
+
+    return isValid
+}
 
 const formValidation = () => {
     const isValidName = checknameInput(userName)
@@ -130,4 +149,11 @@ const loginValidation = () => {
     return (
         isLoginEmailValid && isLoginPasswordValid
     )
+}
+
+const CommentValidation = () => {
+    const isCommentValid = checkComment(commentInput)
+
+    return isCommentValid
+
 }

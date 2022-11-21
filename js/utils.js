@@ -21,6 +21,11 @@ const isPasswordValid = (userInfo) => {
     return re.test(userInfo)
 }
 
+const isCommentInputValid = (comment) => {
+    const re = /^[A-Za-z0-9À-ÿ\u00f1\u00d1\s]{5,}$/
+    return re.test(comment)
+}
+
 const isConfirmValid = (userInfoPassword, userInfoConfirmPassword) => {
 
     let isValid = false

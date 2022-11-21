@@ -15,22 +15,30 @@
     <header class="header">
         <nav class="navbar_menu center-flex">
             <div class="logo center-flex">
-                <a href="">Logo</a>
+                    <img src="/imgs/logo/logo.png" alt="logo">
             </div>
 
-            <div class="menu-navbar-icon" id="navbar-bars">
-                <i class="fa-solid fa-bars"></i>
-            </div>
 
-            <ul class="navbar_options open-navbar-menu center-flex" id="navbar-bars-menu">
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Productos</a></li>
-                <li><a href="">Sponsors</a></li>
-                <li><a href="">Contacto</a></li>
-                <li><i class="fa-sharp fa-solid fa-cart-shopping"></i></li>
-                <li><i class="fa-solid fa-user" id="user-icon"></i></li>
-            </ul>
-            
+            <div class="options-container center-flex">
+
+                <div class="menu-navbar-icon" id="navbar-bars">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <ul class="navbar_options center-flex" id="navbar-bars-menu">
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#sponsors">Sponsors</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+
+                <div class="icons-options-navabar">
+                    <ul class="icons-options center-flex">
+                        <li><i class="fa-sharp fa-solid fa-cart-shopping" id="cart-icon"></i></li>
+                        <li><i class="fa-solid fa-user" id="user-icon"></i></li>
+                    </ul>
+                </div>
+            </div>
 
             <div class="user-menu" id="user-info-menu">
                 <!-- <div class="center-flex column">
@@ -44,15 +52,45 @@
                     <button class="logout-button" id="logOut-button">cerrar sesion</button>
                 </div> -->
             </div>
+
+            <div class="cart-menu" id="cart-menu">
+                <h2>Tus productos</h2>
+                <div class="Products-container" id="cart-container">
+
+                    <!-- <div class="cart-item">
+                        <img src="" alt="producto" />
+                        <div class="item-info">
+                          <h3 class="item-title">campera de cuero</h3>
+                          <span class="item-price">$100000</span>
+                        </div>
+                        <div class="item-handler">
+                          <span class="quantity-handler down" data-id=${id}><i class="fa-solid fa-minus"></i></span>
+                          <span class="item-quantity">1</span>
+                          <span class="quantity-handler up" data-id=${id}><i class="fa-regular fa-plus"></i></span>
+                        </div>
+                    </div> -->
+
+
+
+                </div>
+                <span class="divider"></span>
+
+                <div class="cart-total">
+                  <p>Total:</p>
+                  <span class="total" id="total">$ 0.00</span>
+                </div>
+
+                <button class="btn-buy" id="buy-btn">Comprar</button>
+                <button class="btn-delete" id="delete-btn">Vaciar carrito</button>
+            </div>
+
+            <div class="overlay" id="overlay"></div>
         </nav>
     </header>
 
-    <!-- menus -->
-
-
     <!-- hero -->
 
-    <div class="hero-container">
+    <div class="hero-container" id="hero">
         <div class="hero center-flex">
             <h1 class="hero_title">The Sportster Space</h1>
         </div>        
@@ -60,7 +98,7 @@
 
     <!-- sponsors -->
 
-    <section class="sponsors_container">
+    <section class="sponsors_container" id="sponsors">
 
         <div class="sponsor_title_container">
             <h2 class="sponsor_title">Nuestros sponsors</h2>
@@ -78,7 +116,7 @@
 
     <!-- filtros -->
 
-    <section class="categories-container">
+    <section class="categories-container" id="products">
 
         <h5>Categorias de productos</h5>
 
@@ -95,7 +133,7 @@
             </button>
             <button class="category" data-category="pantalones">
                 <img src="/imgs/categories/jeans.png" alt="pantalones" />
-                <h4>pantalones</h4>
+                <h4>Pantalones</h4>
                 <span class="divider-categories"></span>
             </button>
             <button class="category" data-category="calzado">
@@ -121,7 +159,56 @@
         </div>
     </section>
 
+    <section class="products-container-cards">
+        
+        <div class="product-title-container">
+            <h5>Nuestros Productos</h5>
+        </div>
+
+        <div class="products" id="productsHomeContainer">
+
+            <!-- <div class="product-card">
+                <div class="product-image-container">
+                    <img src="/imgs/login-register/moto-login.jpg" alt="imagen del producto" class="product-image">
+                </div>
+
+                <div class="product-name-container">
+                    <h3>campera de cuero</h3>
+                </div>
+
+                <div class="product-price-container">
+                    <h3>$100000</h3>
+                </div>
+
+                <div class="product-description-container">
+                    <p>campera de cuero harley davidson original</p>
+                </div>
+            </div> -->
+
+
+        </div>
+        
+
+    </section>
+
+    <section class="footer-section" id="contacto">
+        <footer>
+            <div class="contact-title-container center-flex">
+                <h2>Contactenos</h2>
+            </div>
+            <div class="social-icons-container center-flex">
+                <li><a href=""><i class="fa-brands fa-instagram social-icons"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-twitter social-icons"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube social-icons"></i></a></li>
+            </div>
+        </footer>
+    </section>
+
+    <script src="/js/products.js"></script>
+    <script src="/js/filters.js"></script>
+    <script src="/js/render-product.js"></script>
     <script src="/js/utils.js"></script>
+    <script src="/js/cart.js"></script>
     <script src="/js/home.js"></script>
 </body>
 </html>

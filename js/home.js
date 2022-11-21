@@ -2,7 +2,9 @@ const userIcon = document.getElementById("user-icon")
 const userMenu = document.getElementById("user-info-menu")
 const barsIcon = document.getElementById("navbar-bars")
 const barsMenu = document.getElementById("navbar-bars-menu")
-
+const cartIcon = document.getElementById("cart-icon")
+const cartMenu = document.getElementById("cart-menu")
+const overlay = document.getElementById("overlay")
 
 window.addEventListener('load', () => {
     const logoutButton = document.getElementById("logout-button")
@@ -13,19 +15,60 @@ window.addEventListener('load', () => {
 let activeUser = JSON.parse(localStorage.getItem('activeUser')) || []
 
 const toggleUserMenu = () => {
-    userMenu.classList.toggle("open-user-menu");
+    userMenu.classList.toggle("open-menu");
     if (barsMenu.classList.contains("open-navbar-menu")) {
         barsMenu.classList.remove("open-navbar-menu");
         return;
+    } else if (cartMenu.classList.contains("open-menu")) {
+        cartMenu.classList.remove("open-menu")
+        return
     }
+    overlay.classList.toggle("show-overlay")
 };
 
 const toggleNavbarMenu = () => {
     barsMenu.classList.toggle("open-navbar-menu");
-    if (userMenu.classList.contains("open-user-menu")) {
-        userMenu.classList.remove("open-user-menu");
+    if (userMenu.classList.contains("open-menu")) {
+        userMenu.classList.remove("open-menu");
         return;
+    } else if (cartMenu.classList.contains("open-menu")) {
+        cartMenu.classList.remove("open-menu")
+        return
     }
+    overlay.classList.toggle("show-overlay");
+};
+
+const toggleCartMenu = () => {
+    cartMenu.classList.toggle("open-menu")
+    if (userMenu.classList.contains("open-menu")) {
+        userMenu.classList.remove("open-menu")
+        return
+    } else if (barsMenu.classList.contains("open-navbar-menu")) {
+        barsMenu.classList.remove("open-navbar-menu")
+        return
+
+    }
+    overlay.classList.toggle("show-overlay");
+}
+
+const closeOnOverlayClick = () => {
+    barsMenu.classList.remove("open-navbar-menu");
+    userMenu.classList.remove("open-menu");
+    cartMenu.classList.remove("open-menu")
+    overlay.classList.remove("show-overlay");
+};
+
+const closeOnScroll = () => {
+    if (
+        !barsMenu.classList.contains("open-navbar-menu") &&
+        !cartMenu.classList.contains("open-menu") &&
+        !userMenu.classList.contains("open-menu")
+    )
+        return;
+    barsMenu.classList.remove("open-navbar-menu");
+    cartMenu.classList.remove("open-menu");
+    userMenu.classList.remove("open-menu");
+    overlay.classList.remove("show-overlay");
 };
 
 
@@ -52,13 +95,20 @@ const renderUser = (arr) => {
 }
 
 const logOut = () => {
-    localStorage.removeItem('activeUser')
-    window.location.href = "/index.html"
+
+    if (window.confirm("está seguro que desea cerrar sesión?")) {
+        localStorage.removeItem('activeUser')
+        window.location.href = "/index.html"
+    }
+
 }
 
 const init = () => {
     userIcon.addEventListener('click', toggleUserMenu)
     barsIcon.addEventListener('click', toggleNavbarMenu)
+    cartIcon.addEventListener('click', toggleCartMenu)
+    window.addEventListener("scroll", closeOnScroll);
+    overlay.addEventListener('click', closeOnOverlayClick)
     renderUser(activeUser)
 }
 

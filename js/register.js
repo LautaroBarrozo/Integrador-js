@@ -30,6 +30,7 @@ const submitForm = (e) => {
         saveData()
         form.reset()
         saveLocalStorage()
+        window.location.href = "/index.html"
 
     }
 }

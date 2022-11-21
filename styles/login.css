@@ -43,7 +43,13 @@ body{
     color: var(--white);
 }
 
-.logo a, i{
+.logo img{
+    margin-left: 1rem;
+    height: 4rem;
+    width: 5rem;
+}
+
+i{
     color: var(--white);
     cursor: pointer;
 }
@@ -80,6 +86,13 @@ body{
     border-radius: 0 1rem 1rem 0;
 }
 
+.login_form_register{
+    background-color: var(--black);
+    width: 30rem;
+    height: 30rem;
+    border-radius: 0 1rem 1rem 0;
+}
+
 p, .form-title{
     color: var(--white);
     font-size: 1.1rem;
@@ -88,6 +101,10 @@ p, .form-title{
 
 .form-title{
     font-size: 2rem;
+    background: rgb(245,130,31);
+    background: linear-gradient(90deg, rgba(245,130,31,1) 0%, rgba(205,71,18,1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
 a{
@@ -104,10 +121,15 @@ a:hover{
 
 button{
     font-family: 'New Rocker', cursive;
+    background: rgb(245,130,31);
+    background: linear-gradient(90deg, rgba(245,130,31,1) 0%, rgba(205,71,18,1) 100%);
+    border: none;
+    color: var(--white);
 }
 
 button:hover{
-    background-color: #d6d6d6;
+    transition: 0.5s;
+    transform: scale(1.2);
 }
 
 .input-container{
@@ -153,16 +175,31 @@ input:focus{
     border-radius: 1rem 0 0 1rem;
 }
 
+.image-container-register{
+    width: 30rem;
+    height: 30rem;
+    border-radius: 1rem 0 0 1rem;
+}
+
 .login-img{
     background: url(/imgs/login-register/moto-login.jpg) no-repeat center;
 }
 
+.login-img-register{
+    background: url(/imgs/login-register/moto-register.jpg) no-repeat center;
+}
+
 @media (min-width: 420px) and (max-width: 950px){
-    .image-container{
+    .image-container, .image-container-register{
         display: none;
     }
 
     .login_form{
+        border-radius: 1rem;
+    }
+
+    .login_form_register{
+        width: 25rem;
         border-radius: 1rem;
     }
 
@@ -172,7 +209,7 @@ input:focus{
 }
 
 @media (min-width: 300px) and (max-width: 420px) {
-    .image-container{
+    .image-container, .image-container-register{
         display: none;
     }
 
@@ -181,8 +218,13 @@ input:focus{
         border-radius: 1rem;
     }
 
+    .login_form_register{
+        width: 19rem;
+        border-radius: 1rem;
+    }
+
     .input-container{
-        width: 17rem;
+        width: 19rem;
     }
 }
 
