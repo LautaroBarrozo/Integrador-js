@@ -159,6 +159,7 @@ input{
     border: none;
     color: var(--white);
     font-family: 'New Rocker', cursive;
+    padding: 0.5rem;
     font-size: 1rem;
     height: 1.3rem;
     width: 10rem;
