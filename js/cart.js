@@ -78,7 +78,6 @@ const substractProductUnit = (existingProduct) => {
 };
 
 const removeProductFromCart = (existingProduct) => {
-    console.log(existingProduct);
     cart = cart.filter((product) => product.id == existingProduct.id && product.userId != activeUser.id);
     checkCartState();
 };
@@ -111,7 +110,6 @@ const handleQuantity = (e) => {
 
 const resetCartItems = () => {
     cart = cart.filter((product) => product.userId != activeUser.id)
-    console.log(cart);
     checkCartState();
 };
 

@@ -1,0 +1,18 @@
+Hola, Para poder acceder al home.html primero se debe crear una cuenta en el register.
+
+Nombre de usuario: no se aceptan espacios ni numeros, ejemplo de nombre de usuario aceptado: Lautaro.
+
+Contraseña: se requiere un caracter especial, una mayuscula y numeros, ejemplo de contraseña aceptada: @Lautaro22.
+
+todos los datos de la cuenta quedaran almacenados en el localStorage.
+
+ACLARACIONES
+
+Agregar al carrito: para agregar un producto al carrito primero se deberá acceder a la product-page de ese producto para acceder se deberá
+hacer click en la card del producto deseado que se renderiza en el home.
+
+Carrito: el carrito funciona de forma independiente para cada usuario si un usuario vacia/agrega productos a su carrito no afecta
+a los productos que los demas usuarios tengan en su carrito.
+
+Preguntas/Comentarios: cuando se entre en la product-page de algun producto en la parte de abajo se podrá dejar una pregunta/comentario
+los cuales son independientes entre usuarios y productos por lo cual se podran ver los comentarios que hayas dejado con usuarios anteriores.
