@@ -22,7 +22,7 @@ const isPasswordValid = (userInfo) => {
 }
 
 const isCommentInputValid = (comment) => {
-    const re = /^[A-Za-z0-9À-ÿ\u00f1\u00d1\s]{5,}$/
+    const re = /^[A-Za-z0-9À-ÿ\u00f1\u00d1\s¿?@$!¡/_-]{5,}$/
     return re.test(comment)
 }
 
