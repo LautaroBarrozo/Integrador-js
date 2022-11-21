@@ -63,7 +63,7 @@ const showTotal = () => {
 const addUnitToProduct = (product) => {
 
     cart = cart.map((cartProduct) => {
-        return cartProduct.id == product.id
+        return cartProduct.id == product.id && cartProduct.userId == activeUser.id
             ? { ...cartProduct, quantity: cartProduct.quantity + 1, }
             : cartProduct;
     });
@@ -71,19 +71,20 @@ const addUnitToProduct = (product) => {
 
 const substractProductUnit = (existingProduct) => {
     cart = cart.map((cartProduct) => {
-        return cartProduct.id == existingProduct.id
+        return cartProduct.id == existingProduct.id && cartProduct.userId == activeUser.id
             ? { ...cartProduct, quantity: cartProduct.quantity - 1 }
             : cartProduct;
     });
 };
 
 const removeProductFromCart = (existingProduct) => {
-    cart = cart.filter((product) => product.id == existingProduct.id && product.userId != activeUser.id);
+    console.log(activeUser.id);
+    cart = cart.filter((product) => product.userId !== activeUser.id && existingProduct.userId === activeUser.id);
     checkCartState();
 };
 
 const handleMinusBtnEvent = (id) => {
-    const existingCartProduct = cart.find((item) => item.id == id);
+    const existingCartProduct = cart.find((item) => item.id == id && item.userId == activeUser.id);
 
     if (existingCartProduct.quantity == 1) {
         if (window.confirm("¿Desea Eliminar el producto del carrito?")) {

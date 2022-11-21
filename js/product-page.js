@@ -156,7 +156,7 @@ window.addEventListener('load', () => {
 
 
         cart.map((product) => {
-            if (product.id == activeProduct.id && product.userName == activeUser.name) {
+            if (product.id == activeProduct.id && product.userId == activeUser.id) {
                 existProduct = false
             }
         })
