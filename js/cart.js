@@ -78,10 +78,17 @@ const substractProductUnit = (existingProduct) => {
 };
 
 const removeProductFromCart = (existingProduct) => {
-    console.log(activeUser.id);
-    cart = cart.filter((product) => product.userId !== activeUser.id && existingProduct.userId === activeUser.id);
+    cart.map((product) => {
+        if (product.id === existingProduct.id && (existingProduct.userId && product.userId) === activeUser.id) {
+            const index = cart.indexOf(product)
+            cart.splice(index, 1)
+            return
+        }
+
+    })
     checkCartState();
 };
+
 
 const handleMinusBtnEvent = (id) => {
     const existingCartProduct = cart.find((item) => item.id == id && item.userId == activeUser.id);
